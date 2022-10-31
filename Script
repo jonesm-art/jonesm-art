@@ -1,0 +1,27 @@
+
+def RobotStack(b, n, k):
+
+if (b == 0):
+
+return 1
+
+if (b < 0):
+
+return 0
+
+if (n == 0 && b > 0):
+
+return 0
+
+return RobotStack(b - 1, n - 1, k) + RobotStack(b - k, n - 1, k)
+
+if __name__ == "__main__":
+
+b = int(input("Enter the number of robots: "))
+
+n = int(input("Enter the number of stacks: "))
+
+k = int(input("Enter the maximum number of robots per stack: "))
+
+print("There are", RobotStack(b, n, k), "ways to distribute", b, "robots into", n, "stacks of", k, "robots each.")
+RobotStack.py input.txt
